@@ -40,7 +40,7 @@ function Stopwatch() {
   });
 
   reset.addEventListener("click", function() {
-    startTime = 0;
+    startTime = Date.now();
     stopTime = 0;
     clock.textContent = "00:00";
   });
