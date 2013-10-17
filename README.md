@@ -1,4 +1,6 @@
 # A Simple Stopwatch App
 
-The is a simple that has a little HTML, CSS, and JS to help
-you learn how to write your first Open Web App.
+This is a simple stopwatch app that teaches you the basic HTML, CSS, and JS
+skills needed to write your first Open Web App.
+
+See the app running here: http://leibovic.github.io/stopwatch/
