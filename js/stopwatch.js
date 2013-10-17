@@ -40,7 +40,8 @@ function Stopwatch() {
   });
 
   reset.addEventListener("click", function() {
-    startTime = 0;
+    // If the timer is currently running, just reset the start time to now
+    startTime = intervalID ? Date.now() : 0;
     stopTime = 0;
     clock.textContent = "00:00";
   });
