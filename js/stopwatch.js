@@ -1,4 +1,11 @@
-function Stopwatch() {
+"use strict";
+
+// Set up the app once the DOM is loaded
+window.addEventListener("DOMContentLoaded", setupStopwatch);
+window.addEventListener("DOMContentLoaded", setupInstallButton);
+
+// Sets up the stopwatch functionality for the app
+function setupStopwatch() {
   var clock = document.getElementById("clock");
   var startStop = document.getElementById("start-stop");
   var reset = document.getElementById("reset");
@@ -45,23 +52,51 @@ function Stopwatch() {
     stopTime = 0;
     clock.textContent = "00:00";
   });
+
+  // Helper function that takes a UTC timestamp and returns a formatted time string
+  function formatTime(timestamp) {
+    var d = new Date(timestamp);
+
+    var minutes = d.getMinutes();
+    if (minutes < 10) {
+      minutes = "0" + minutes;
+    }
+
+    var seconds = d.getSeconds();
+    if (seconds < 10) {
+      seconds = "0" + seconds;
+    }
+
+    return minutes + ":" + seconds;
+  }
 }
 
-// Takes a UTC timestamp and returns a formatted time string
-function formatTime(timestamp) {
-  var d = new Date(timestamp);
+// Sets up a button to install the app if it isn't already installed
+function setupInstallButton() {
+  var request = window.navigator.mozApps.getSelf();
+  request.onsuccess = function getSelfSuccess() {
+    // Don't show the install button if the app is already installed
+    if (request.result)
+      return;
 
-  var minutes = d.getMinutes();
-  if (minutes < 10) {
-    minutes = "0" + minutes;
+    var installButton = document.getElementById("install");
+    installButton.classList.remove("hidden");
+    installButton.addEventListener("click", install);
+  };
+  request.onerror = function getSelfError() {
+    console.warn("error getting self: " + request.error.name);
+  };
+
+  function install() {
+    var location = window.location.href;
+    var manifestURL = location.substring(0, location.lastIndexOf("/")) + "/manifest.webapp";
+
+    var request = navigator.mozApps.install(manifestURL);
+    request.onsuccess = function installSuccess() {
+      document.getElementById("install").classList.add("hidden");
+    };
+    request.onerror = function installError() {
+      console.warn("error installing app: " + request.error.name);
+    };
   }
-
-  var seconds = d.getSeconds();
-  if (seconds < 10) {
-    seconds = "0" + seconds;
-  }
-
-  return minutes + ":" + seconds;
 }
-
-document.addEventListener("DOMContentLoaded", Stopwatch);
