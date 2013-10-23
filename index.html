@@ -3,19 +3,27 @@
   <head>
     <meta charset="utf-8">
 
+    <!-- This title tag controls the page title that appears when you load this app in a browser -->
     <title>Stopwatch</title>
-    <meta name="description" content="">
-    <meta name="viewport" content="width=device-width">
 
-    <!-- This creates the favicon for the page -->
+    <!-- This viewport meta tag makes sure the app fits the width of mobile devices -->
+    <meta name="viewport" content="width=device-width,user-scalable=false">
+
+    <!-- This link tag creates the favicon for the page -->
     <link rel="icon" href="favion.ico">
 
-    <!-- This loads the CSS file to style the app -->
+    <!-- This link tag loads an external font for the app to use
+         See: https://www.google.com/fonts/ -->
+    <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Open+Sans">
+
+    <!-- This link tag loads the style sheet to style the app -->
     <link rel="stylesheet" href="css/stopwatch.css">
+
+    <!-- This link tag loads the style sheet to style the buttons in the app
+         See: http://buildingfirefoxos.com/building-blocks/buttons.html -->
     <link rel="stylesheet" href="css/bb/buttons.css">
   </head>
   <body>
-    
     <h1 id="clock">00:00</h1>
 
     <button id="start-stop">Start</button>
