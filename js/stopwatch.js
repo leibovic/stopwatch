@@ -1,3 +1,15 @@
+/*
+This is a JavaScript file. JavaScript (JS for short) is the programming
+languagethat enables web pages to respond to user interaction beyond
+the basic level provided by HTML links and forms.
+
+You can learn more about JavaScript here:
+https://developer.mozilla.org/learn/javascript
+
+This is a JavaScript comment. Anything inside these comment symbols will be ignored
+by the browser, which is handy for adding explanations to your code!
+*/
+
 "use strict";
 
 // Set up the app once the DOM is loaded

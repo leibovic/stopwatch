@@ -1,11 +1,28 @@
+/*
+This is a CSS file. CSS (Cascading Style Sheets) is a language for describing the
+appearance of web pages. To create good-looking web pages, you need to learn CSS
+in order to define the appearance and location of the HTML elements within the pages.
+
+You can learn more about CSS here:
+https://developer.mozilla.org/learn/css
+
+This is a CSS comment. Anything inside these comment symbols will be ignored
+by the browser, which is handy for adding explanations to your code!
+*/
+
+/* This is a tag selector that matches the <body> element */
 body {
-  font-family: "Open Sans", sans-serif;
+  font-family: "Open Sans", sans-serif; /* Default font style used in the app */
+  color: #333; /* Default font color for the app */
+  background-color: #eee; /* Default background color for the app */
 }
 
+/* This is an id selector that matches the element with id="clock" */
 #clock {
-  text-align: center;
+  text-align: center; /* Horizontally centers the text for the clock */
 }
 
+/* This is a class selector that matches any element with class="hidden" */
 .hidden {
-  display: none;
+  display: none; /* Hides the element that matches this rule */
 }
