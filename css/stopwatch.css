@@ -12,9 +12,9 @@ by the browser, which is handy for adding explanations to your code!
 
 /* This is a tag selector that matches the <body> element */
 body {
-  font-family: "Open Sans", sans-serif; /* Default font style used in the app */
   color: #333; /* Default font color for the app */
   background-color: #eee; /* Default background color for the app */
+  font-family: "Open Sans", sans-serif; /* Default font style used in the app */
 }
 
 /* This is an id selector that matches the element with id="clock" */
